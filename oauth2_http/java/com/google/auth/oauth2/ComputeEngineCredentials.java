@@ -635,6 +635,11 @@ public class ComputeEngineCredentials extends GoogleCredentials
     return false;
   }
 
+  @VisibleForTesting
+  void setProjectId(String projectId) {
+    this.projectId = projectId;
+  }
+
   private static boolean pingComputeEngineMetadata(
       HttpTransportFactory transportFactory, DefaultCredentialsProvider provider) {
     GenericUrl tokenUrl = new GenericUrl(getMetadataServerUrl(provider));
